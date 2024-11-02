@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #a8e6cf, #388e3c);
+            margin: 0;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            form {
+                padding: 15px;
+            }
+
+            nav ul li {
+                display: block;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="Index.html"><i class="fas fa-book"></i> Menu</a></li>
+        </ul>
+    </nav>
+    
+    <hr>
+    <h1>Contáctanos</h1>
+    <form id="contactForm" onsubmit="return sendEmail();">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" required><br>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" required><br>
+
+        <label for="career">Carrera:</label>
+        <select id="career" required>
+            <option value="Informática">Informática</option>
+            <option value="Robótica">Robótica</option>
+            <option value="Bancas y Finanzas">Bancas y Finanzas</option>
+            <option value="Administración de Empresas">Administración de Empresas</option>
+            <option value="Construcciones Metálicas">Construcciones Metálicas</option>
+            <option value="Contaduría y Finanzas">Contaduría y Finanzas</option>
+            <option value="Ciencias y Humanidades">Ciencias y Humanidades</option>
+        </select><br>
+
+        <label for="message">Mensaje:</label>
+        <textarea id="message" required></textarea><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        function sendEmail() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const career = document.getElementById('career').value;
+            const message = document.getElementById('message').value;
+
+            const subject = 'Nuevo mensaje de contacto';
+            const body = `Nombre: ${name}\nCorreo: ${email}\nCarrera: ${career}\nMensaje: ${message}`;
+            const mailtoLink = `mailto:Lohanyortiz5@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            window.location.href = mailtoLink;
+            return false; // Evitar que el formulario se envíe de forma tradicional
+        }
+    </script>
+</body>
+</html>

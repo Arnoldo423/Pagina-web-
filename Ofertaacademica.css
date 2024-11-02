@@ -1,0 +1,173 @@
+/* General */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Fondo claro */
+    color: #333;
+}
+
+/* Encabezado */
+header {
+    background-color: #007BFF; /* Azul moderno */
+    color: white;
+    text-align: center;
+    padding: 1.5em 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #0056b3; /* Azul más oscuro para el menú */
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #003f7f; /* Azul aún más oscuro al pasar el mouse */
+}
+
+/* Sección de cursos */
+.courses {
+    padding: 40px;
+    text-align: center;
+}
+
+.courses h2 {
+    color: #007BFF; /* Azul moderno */
+    margin-bottom: 20px;
+    font-size: 24px;
+    letter-spacing: 2px; /* Más espacio entre letras */
+}
+
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    gap: 40px; /* Separación entre cuadros */
+    justify-items: center; /* Centra los cuadros horizontalmente */
+}
+
+/* Estilo del curso */
+.course {
+    perspective: 1200px;
+    height: 300px; /* Tamaño más pequeño */
+    width: 270px;  /* Ajusta el ancho */
+}
+
+.course-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Efecto 3D */
+}
+
+.course:hover .course-inner {
+    transform: rotateY(180deg);
+}
+
+.course-front, .course-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden;
+}
+
+/* Frente del curso */
+.course-front {
+    background-color: white; /* Fondo blanco */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.course-front img {
+    width: 100%; /* Ajusta para que ocupe todo el cuadro */
+    height: 100%; /* Ajusta para que ocupe todo el cuadro */
+    object-fit: cover;
+    border-bottom: 2px solid #007BFF; /* Bordes del color azul moderno */
+}
+
+.course-front h3 {
+    color: white; /* Color del texto del encabezado */
+    background-color: rgba(0, 123, 255, 0.7); /* Fondo translúcido azul */
+    padding: 10px;
+    bottom: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 18px;
+}
+
+/* Parte trasera del curso */
+.course-back {
+    background-color: #28a745; /* Verde moderno */
+    color: white;
+    text-align: center;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.course-back h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.course-back p {
+    font-size: 16px;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #0056b3; /* Azul oscuro */
+    color: white;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* Iconos de redes sociales */
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+body {
+    background: linear-gradient(to bottom, #a8e6cf, #388e3c);
+}
